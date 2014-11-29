@@ -64,3 +64,6 @@ We can now visit the app in browser with `heroku open`.
 - Config file to configure all the manual changes of code
 
 #Author
+####**Gagandeep Singh**
+#### gagandeep.2020@gmail.com
+##### http://www.aftercoupon.in
