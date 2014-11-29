@@ -44,7 +44,23 @@ Run project
 Open browser and point to http://localhost:5000
 
 ####Following step is specific to deploy solution to Heroku, could be skipped if not deploying on Heroku
-TODO
+
+Install heroku toolbelt from https://toolbelt.heroku.com/
+
+Create your heroku project
+> heroku create <projectname-optional>
+
+Push code to heroku
+> git push heroku master
+
+Let’s ensure we have one dyno running the `web` process type:
+> heroku ps:scale web=1
+
+We can now visit the app in browser with `heroku open`.
+> heroku open
+
 
 ###ToDo
 - Config file to configure all the manual changes of code
+
+#Author
