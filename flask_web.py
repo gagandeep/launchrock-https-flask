@@ -37,10 +37,10 @@ def proxy():
 def jsonproxy(path):
 	if request.method == "POST":
 		r = requests.post("http://"+path, data=request.form, headers=request.headers)
-		return Response(r.content.replace("http://","https://"),  mimetype='application/json')
+		return Response(r.content.replace("http:\/\/","\/\/"),  mimetype='application/json')
 	else:
 		r = requests.get("http://"+path, headers=request.headers)
-		return r.content.replace("http://","//")
+		return r.content.replace("http:\/\/","\/\/")
 	return ","+path+request.method+"".join(request.headers.values())
 
 
