@@ -49,22 +49,22 @@ def jsproxy(path):
 
 	if request.method == "POST":
 		r = requests.post("http://"+path, data=request.form, headers=request.headers)
-		return Response(r.content.replace("//platform.launchrock.com/v1/","//mobiledealcafe.herokuapp.com/json/platform.launchrock.com/v1/"),  mimetype='application/javascript')
+		return Response(r.content.replace("//platform.launchrock.com/v1/","/json/platform.launchrock.com/v1/"),  mimetype='application/javascript')
 	else:
 		print path
 		print request.headers
 		r = requests.get("http://"+path)
 		print path[-4:]
 		if path[-4:] == ".css":
-			return Response(r.content.replace("//platform.launchrock.com/v1/","//mobiledealcafe.herokuapp.com/json/platform.launchrock.com/v1/"),mimetype="text/css")
+			return Response(r.content.replace("//platform.launchrock.com/v1/","/json/platform.launchrock.com/v1/"),mimetype="text/css")
 		else:
-			return Response(r.content.replace("//platform.launchrock.com/v1/","//mobiledealcafe.herokuapp.com/json/platform.launchrock.com/v1/"),mimetype="application/javascript")
+			return Response(r.content.replace("//platform.launchrock.com/v1/","/json/platform.launchrock.com/v1/"),mimetype="application/javascript")
 
 @app.route("/<path:path>", methods=['GET'])
 def imgproxy(path):
 	if request.method == "POST":
 		r = requests.post("http://ignition.launchrock.com/"+path, data=request.form, headers=request.headers)
-		return Response(r.content.replace("//platform.launchrock.com/v1/","//mobiledealcafe.herokuapp.com/json/platform.launchrock.com/v1/"),  mimetype='application/javascript')
+		return Response(r.content.replace("//platform.launchrock.com/v1/","/json/platform.launchrock.com/v1/"),  mimetype='application/javascript')
 	else:
 		print path
 		print request.headers
